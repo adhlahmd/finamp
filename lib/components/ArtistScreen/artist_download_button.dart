@@ -87,7 +87,7 @@ class _ArtistDownloadButtonState extends State<ArtistDownloadButton> {
                           onConfirmed: () async {
                             try {
                               final deleteFutures = snapshot.data!.map((e) =>
-                                  _downloadsHelper.deleteParentAndChildDownloads(
+                                  _downloadsHelper.deleteDownloads(
                                       jellyfinItemIds: _downloadsHelper
                                           .getDownloadedParent(e.id)!
                                           .downloadedChildren
