@@ -80,10 +80,12 @@ class _AlbumScreenContentState extends State<AlbumScreenContent> {
                   !FinampSettingsHelper.finampSettings.isOffline)
                 PlaylistNameEditButton(playlist: widget.parent),
               FavoriteButton(item: widget.parent),
-              if (GetIt.instance<DownloadsHelper>().isAlbumDownloaded(widget.parent.id))
+              if (GetIt.instance<DownloadsHelper>()
+                  .isAlbumDownloaded(widget.parent.id))
                 DeleteButton(parent: widget.parent, items: widget.children),
               if (!FinampSettingsHelper.finampSettings.isOffline)
-                SyncAlbumOrPlaylistButton(parent: widget.parent, items: widget.children)
+                SyncAlbumOrPlaylistButton(
+                    parent: widget.parent, items: widget.children)
             ],
           ),
           if (widget.children.length > 1 &&
